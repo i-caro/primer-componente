@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    grid-template-columns: auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+ion-card{
+    max-width: 400px;
+    max-height: 300px;
+}
