@@ -1,6 +1,5 @@
-
 <ion-content [fullscreen]="true">
-  <form (submit)="addPersonalCard()">
+  <form (ngSubmit)="addPersonalCard()">
     <ion-list>
       <ion-input label="Nombre" type="text" placeholder="Nombre" labelPlacement="floating" [(ngModel)]="name" name="name" required></ion-input>
       <ion-input label="Apellido" type="text" placeholder="Apellidos" labelPlacement="floating" [(ngModel)]="surname" name="surname" required></ion-input>
@@ -9,5 +8,6 @@
     <ion-button type="submit">Enviar</ion-button>
   </form>
 
-  <app-personal-card [people]="personalCards"></app-personal-card>
+  <!-- El componente de las tarjetas de personas -->
+  <app-personal-card></app-personal-card>
 </ion-content>

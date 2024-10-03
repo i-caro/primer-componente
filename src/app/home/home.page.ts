@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PeopleService } from '../share/services/people.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,18 +12,13 @@ export class HomePage {
   surname: string = '';
   age: string='';
 
-  personalCards: Array<{ name: string; surname: string; age: string }> = [];
+  constructor(private peopleService: PeopleService) {}
 
-  constructor() {}
-
+  // Función para añadir una nueva persona
   addPersonalCard() {
     if (this.name && this.surname && this.age) {
-      this.personalCards.push({
-        name: this.name,
-        surname: this.surname,
-        age: this.age
-      });
-
+      const newPerson = { name: this.name, surname: this.surname, age: this.age };
+      this.peopleService.addPerson(newPerson);
       this.name = '';
       this.surname = '';
       this.age = '';
